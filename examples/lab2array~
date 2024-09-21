@@ -1,0 +1,26 @@
+lxi h, 0005h
+mvi c,00h
+
+lda 0006h
+mov b,m
+add b
+inx h
+inx h
+mov m,b
+add b
+loop: mov b,m
+add b
+cc carry
+inx h
+mov c,m
+cpi 00h
+jz hold
+
+
+carry: inr c
+ret
+
+hold: sta 0003h
+mov a,c 
+sta 0003h
+hlt

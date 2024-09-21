@@ -1,0 +1,11 @@
+mvi c,00h
+lxi h,0000h
+mov a,m
+inx h
+add m
+sta 0009h
+jnc result
+result: inx h
+mvi a,01h
+sta 000ah
+hlt

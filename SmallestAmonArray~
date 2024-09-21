@@ -1,0 +1,21 @@
+; 0000H -> Array(5)
+; 0001H -> 2F
+; 0002H -> 02
+; 0003H -> 01
+; 0004H -> 3A
+; 0005H -> 4B 
+; 0006H -> OUTPUT
+; Program to compare the array and store smallest number 
+lxi h, 0000h
+mov c,m
+inx h
+mov a,m
+dcr c
+Back: inx h
+cmp m
+jc Next
+mov a,m
+Next: dcr c
+jnz Back
+sta 0006h
+hlt

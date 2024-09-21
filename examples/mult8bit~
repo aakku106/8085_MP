@@ -1,0 +1,21 @@
+; multiply weeeeeee
+lda 0000h
+mov b,a
+lda 0001h
+mov d,a
+lda 0000h
+mvi c,00h
+dcr d
+add b
+dcr d
+loop: add b
+cc count
+dcr d
+jnz loop
+sta 0003h
+mov a,c
+sta 0004h
+hlt
+
+count: inr c
+ret

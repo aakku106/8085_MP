@@ -1,0 +1,4 @@
+lda 0001h
+cma 
+sta 0002h
+hlt

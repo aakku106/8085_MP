@@ -1,0 +1,22 @@
+; shorting array in assending orderr
+; 0000 -> count
+; 0001 -> data sored
+lxi h,000h;
+mov b,m;
+l3: mov c,b;
+inx h
+l2: mov a,m
+inx h;
+mov d,m;
+cmp d;
+jc l1;
+mov m,a;
+dcx h;
+mov m,d;
+inx h;
+l1: dcr c;
+jnz l2;
+dcr b;
+jnz l3;
+hlt;
+

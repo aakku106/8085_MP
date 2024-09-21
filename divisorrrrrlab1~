@@ -1,0 +1,13 @@
+lda 0002h
+mov b,a
+lda 0001h
+mvi c,00h
+sub b
+loop: inr c
+sub b
+jnc loop
+add b
+sta 0004h
+mov a,c
+sta 0003h
+hlt

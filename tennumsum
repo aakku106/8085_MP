@@ -1,0 +1,16 @@
+lxi h,2050h
+mvi a,00h
+inx h
+adc m
+mvi b,0ah
+dcr b
+loop: inx h
+adc m
+jc sup
+dcr b
+jnz loop
+mov a,m
+sta d000h
+sup: mvi a, 01
+sta d001
+hlt 

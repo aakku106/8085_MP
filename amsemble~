@@ -1,0 +1,9 @@
+lda 0000h
+ani  01
+jz jaBhag
+mvi a,00h
+jmp odd
+jaBhag: mvi a,22h
+sta 0002h
+odd: sta 0002h
+hlt
